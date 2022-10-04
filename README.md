@@ -1,75 +1,77 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+# Todo-List-App
 
-# Project Name
-
-> Description the project.
-
-
+> This is a project I created for listing out todo lists and applying all the different operations on it. Such as edit, delete,add, and display todolist.
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML
+- CSS
+- JS
 
-## Live Demo (if available)
+## Get Started
 
-[Live Demo Link](https://livedemo.com)
-
-
-## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
-To get a local copy up and running follow these simple example steps.
+To get the content of this project locally you need to run the following commands in your terminal.
 
 ### Prerequisites
+- IDE(code editor) like: **Vscode**, **Sublime**, etc. 
+- [Git](https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/)
 
 ### Setup
+1. Download the **Zip** file or clone the repo with:
+```bash
+git clone https://github.com/yetemegn-telaye/Todo-List-App.git
+```
+3. To access cloned directory run:
+```bash
+cd Todo-List-App
+```
+3. Open it with the live server
 
 ### Install
+> To install linters and other project's dependencies run:
+```bash
+npm install
+```
+## Run
+```bash
+1. To run this project :
+npm run 
+2. open the urs localhost:8080 on your browser
 
-### Usage
+```
 
-### Run tests
+## Run Test for Linters
 
-### Deployment
+For tracking linter errors locally you need to follow these steps:
 
+1. For tracking linter errors in HTML files run:
+```bash 
+npx hint .
+```
 
+2. For tracking linter errors in CSS or SASS files run:
 
-## Authors
+```bash
+npx stylelint "\*_/_.{css,scss}"
+```
 
-👤 **Author1**
+3. For tracking linter errors in JavaScript files run:
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+```bash
+npx eslint .
+```
 
-👤 **Author2**
+## Author
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+👤 **Yetemegn Lemma**
 
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](../../issues/).
+- GitHub: [@githubhandle](https://github.com/yetemegn-telaye)
+- Twitter: [@twitterhandle](https://twitter.com/Yetemegn19)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/yetemegn-telaye-81370920a/)
 
 ## Show your support
 
-Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+Give a ⭐ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./LICENSE) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+This project is [MIT](./MIT.md) licensed.
