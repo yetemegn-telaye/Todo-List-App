@@ -1,0 +1,31 @@
+{
+  "name": "Todo-List-App",
+  "version": "1.0.0",
+  "description": "> This is a project I created for listing out todo lists and applying all the different operations on it. Such as edit, delete,add, and display todolist.\r ## Built With",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yetemegn-telaye/Todo-List-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yetemegn-telaye/Todo-List-App/issues"
+  },
+  "homepage": "https://github.com/yetemegn-telaye/Todo-List-App#readme",
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.26.0",
+    "hint": "^7.1.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-csstree-validator": "^1.9.0",
+    "stylelint-scss": "^3.21.0"
+  }
+}
