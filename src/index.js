@@ -1,5 +1,5 @@
 import './style.css';
-import {addTask, displayTasks, optionsButton} from './modules/Crud.js';
+import {addTask, displayTasks, optionsButton, removeButtonClicked} from './modules/Crud.js';
 
 let taskLists = [];
 let taskInput = document.querySelector('.add-task-input');
@@ -19,8 +19,8 @@ let main = ()=>{
     }
   });
   displayTasks(taskLists);
-  optionsButton();
-  
+  optionsButton(taskLists);
+  removeButtonClicked(taskLists);
 }
 
 main();
