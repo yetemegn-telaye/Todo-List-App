@@ -1,42 +1,29 @@
 import './style.css';
+import {
+  addTask, displayTasks, optionsButton, removeButtonClicked,
+} from './modules/Crud.js';
 
-const taskLists = [
-  {
-    description: 'Cook dinner',
-    completed: false,
-    index: 2,
-  },
-  {
-    description: 'House chores',
-    completed: false,
-    index: 0,
-  },
+let taskLists = [];
+const taskInput = document.querySelector('.add-task-input');
 
-  {
-    description: 'get hair done',
-    completed: true,
-    index: 1,
-  },
-
-];
-const todoContainer = document.querySelector('.todo-container');
-const ul = document.createElement('ul');
-
-const displayTasks = (tasks) => {
-  tasks.sort((a, b) => a.index - b.index);
-  tasks.forEach((task) => {
-    ul.innerHTML
-    += `
-    <li class="task-item">
-        <div>
-            <input type="checkbox" id=${task.index} name=${task.index} value=${task.description} class="task-checkbox">
-            <label for="vehicle1"> ${task.description}</label>
-        </div>
-       <i class="fas fa-ellipsis-v"></i>
-    </li>
-   `;
+const main = () => {
+  // localStorage.setItem('tasks',JSON.stringify([]));
+  if (localStorage.getItem('tasks') === null) {
+    localStorage.setItem('tasks', JSON.stringify([]));
+    taskLists = [];
+  } else {
+    taskLists = JSON.parse(localStorage.getItem('tasks'));
+  }
+  taskInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter' && taskInput.value) {
+      e.preventDefault();
+      addTask(taskInput.value, taskLists);
+      taskInput.value = null;
+    }
   });
-  todoContainer.appendChild(ul);
+  displayTasks(taskLists);
+  optionsButton(taskLists);
+  removeButtonClicked(taskLists);
 };
 
-displayTasks(taskLists);
+main();

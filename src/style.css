@@ -47,15 +47,43 @@ body {
   border-bottom: 2px solid rgb(195, 191, 191);
 }
 
+.task-item-edit {
+  background-color: bisque;
+}
+
 .task-checkbox {
   margin-right: 5px;
 }
 
-button {
+.clear-btn {
   padding: 20px;
   border: none;
   width: 100%;
   background-color: rgb(233, 233, 233);
   font-size: large;
   color: rgb(125, 125, 125);
+}
+
+.options-btn {
+  background-color: transparent;
+  border: none;
+}
+
+.delete-btn {
+  background-color: transparent;
+  border: none;
+}
+
+.btn-toggle {
+  display: none;
+}
+
+.edit-input {
+  border: none;
+  background-color: transparent;
+  padding: 10px;
+}
+
+.edit-input:focus {
+  border: 1px solid bisque;
 }
