@@ -9,6 +9,7 @@ const taskInput = document.querySelector('.add-task-input');
 const main = () => {
   // localStorage.setItem('tasks',JSON.stringify([]));
   if (localStorage.getItem('tasks') === null) {
+    localStorage.setItem('tasks', JSON.stringify([]));
     taskLists = [];
   } else {
     taskLists = JSON.parse(localStorage.getItem('tasks'));
