@@ -68,19 +68,22 @@ body {
   background-color: transparent;
   border: none;
 }
+
 .delete-btn {
   background-color: transparent;
   border: none;
 }
+
 .btn-toggle {
   display: none;
 }
+
 .edit-input {
   border: none;
   background-color: transparent;
   padding: 10px;
-  
 }
+
 .edit-input:focus {
-  border:1px solid bisque;
+  border: 1px solid bisque;
 }

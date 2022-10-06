@@ -1,28 +1,25 @@
-
 const ul = document.createElement('ul');
 const todoContainer = document.querySelector('.todo-container');
 class Task {
-    constructor(description,completed,index){
-        this.description=description;
-        this.completed=completed;
-        this.index=index;
-    }   
+  constructor(description, completed, index) {
+    this.description = description;
+    this.completed = completed;
+    this.index = index;
+  }
 }
 
-let addTask = (inputVal,tasksArr)=>{
-    let taskObj= new Task(inputVal,false,tasksArr.length);
-    let localData = JSON.parse(localStorage.getItem('tasks'));
-    tasksArr.push(taskObj);
-    localData.push(taskObj);
-    localStorage.setItem('tasks',JSON.stringify(localData));
-    window.location.reload();
-}
+const addTask = (inputVal, tasksArr) => {
+  const taskObj = new Task(inputVal, false, tasksArr.length);
+  const localData = JSON.parse(localStorage.getItem('tasks'));
+  tasksArr.push(taskObj);
+  localData.push(taskObj);
+  localStorage.setItem('tasks', JSON.stringify(localData));
+  window.location.reload();
+};
 
 const displayTasks = (tasks) => {
- 
-   
-    tasks.forEach((task) => {
-      ul.innerHTML
+  tasks.forEach((task) => {
+    ul.innerHTML
       += `
       <li class="task-item">
           <div class="task-value" id=${task.index}>
@@ -38,77 +35,73 @@ const displayTasks = (tasks) => {
         
       </li>
      `;
-   
-    });
-    todoContainer.appendChild(ul);
-    
-  };
+  });
+  todoContainer.appendChild(ul);
+};
 
+const editTodo = (optionBtn, taskArr) => {
+  const todoDiv = optionBtn.previousElementSibling;
+  const labelDesc = todoDiv.lastElementChild;
+  const listContainer = todoDiv.parentElement;
+  const editInput = document.createElement('input');
+  editInput.type = 'text';
+  editInput.className = 'edit-input';
+  editInput.value = labelDesc.textContent;
+  todoDiv.replaceChild(editInput, labelDesc);
+  editInput.focus();
+  editInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      const localData = JSON.parse(localStorage.getItem('tasks'));
+      localData[todoDiv.id].description = editInput.value;
+      taskArr = localData;
+      localStorage.setItem('tasks', JSON.stringify(taskArr));
+      labelDesc.textContent = editInput.value;
+      todoDiv.replaceChild(labelDesc, editInput);
+      listContainer.classList.remove('task-item-edit');
+      optionBtn.classList.toggle('btn-toggle');
+      optionBtn.nextElementSibling.classList.toggle('btn-toggle');
+    }
+  });
+};
 
-  
-let optionsButton = (taskArr)=>{
+const optionsButton = (taskArr) => {
   const optionsBtn = document.querySelectorAll('.options-btn');
-  optionsBtn.forEach(option=>{
-    option.addEventListener('click',(e)=>{
-        e.preventDefault();
-        option.parentElement.classList.toggle('task-item-edit');
-        option.classList.toggle('btn-toggle');
-        option.nextElementSibling.classList.toggle('btn-toggle');
-        editTodo(option,taskArr); 
-    })
-  })
-}
+  optionsBtn.forEach((option) => {
+    option.addEventListener('click', (e) => {
+      e.preventDefault();
+      option.parentElement.classList.toggle('task-item-edit');
+      option.classList.toggle('btn-toggle');
+      option.nextElementSibling.classList.toggle('btn-toggle');
+      editTodo(option, taskArr);
+    });
+  });
+};
 
-let editTodo = (optionBtn,taskArr)=>{
-    let todoDiv = optionBtn.previousElementSibling;
-    let labelDesc = todoDiv.lastElementChild;
-    let listContainer = todoDiv.parentElement;
-    let editInput = document.createElement('input');
-    editInput.type="text";
-    editInput.className="edit-input";
-    editInput.value = labelDesc.textContent;
-    todoDiv.replaceChild(editInput,labelDesc);
-    editInput.focus();
-    editInput.addEventListener('keypress',(e)=>{
-        if(e.key==='Enter'){
-            const localData = JSON.parse(localStorage.getItem('tasks'));
-            localData[todoDiv.id].description=editInput.value;
-            taskArr=localData;
-            localStorage.setItem('tasks',JSON.stringify(taskArr));
-            labelDesc.textContent=editInput.value;
-            todoDiv.replaceChild(labelDesc,editInput);
-            listContainer.classList.remove('task-item-edit');
-            optionBtn.classList.toggle('btn-toggle');
-            optionBtn.nextElementSibling.classList.toggle('btn-toggle');
-            
-        }
-    }) 
-}
-
- let removeButtonClicked = (taskArr)=>{
-    const removeBtn = document.querySelectorAll('.delete-btn');
-    removeBtn.forEach(remove=>{
-        const listContainer = remove.parentElement;
-        let todoContainer = listContainer.firstElementChild;
-        remove.addEventListener('click',(e)=>{
-            e.preventDefault();
-            remove.classList.toggle('btn-toggle');
-            removeTodo(todoContainer.id,listContainer,taskArr);
-        })
-    })
- }
-
-let removeTodo = (todoId,listContainer,taskArr)=>{
-    listContainer.remove();
-    let localData = JSON.parse(localStorage.getItem('tasks'));
-   localData = localData.filter(data=>data.index!=todoId);
-   localData.forEach((data,i)=>{
+const removeTodo = (todoId, listContainer, taskArr) => {
+  listContainer.remove();
+  let localData = JSON.parse(localStorage.getItem('tasks'));
+  const todoIdString = Number(todoId);
+  localData = localData.filter((data) => data.index !== todoIdString);
+  localData.forEach((data, i) => {
     data.index = i;
-   })
-    taskArr = localData;
-    localStorage.setItem('tasks',JSON.stringify(localData));
-    console.log(JSON.parse(localStorage.getItem('tasks')));
-}
+  });
+  taskArr = localData;
+  localStorage.setItem('tasks', JSON.stringify(taskArr));
+};
 
+const removeButtonClicked = (taskArr) => {
+  const removeBtn = document.querySelectorAll('.delete-btn');
+  removeBtn.forEach((remove) => {
+    const listContainer = remove.parentElement;
+    const todoContainer = listContainer.firstElementChild;
+    remove.addEventListener('click', (e) => {
+      e.preventDefault();
+      remove.classList.toggle('btn-toggle');
+      removeTodo(todoContainer.id, listContainer, taskArr);
+    });
+  });
+};
 
-export  {addTask, displayTasks, optionsButton, removeButtonClicked};
+export {
+  addTask, displayTasks, optionsButton, removeButtonClicked,
+};
