@@ -13,6 +13,7 @@ To get the content of this project locally you need to run the following command
 
 ## Live Demo
 
+https://yetemegn-telaye.github.io/Todo-List-App/dist/
 
 ### Prerequisites
 - IDE(code editor) like: **Vscode**, **Sublime**, etc. 
@@ -21,7 +22,7 @@ To get the content of this project locally you need to run the following command
 ### Setup
 1. Download the **Zip** file or clone the repo with:
 ```bash
-git clone https://github.com/yetemegn-telaye/Todo-List-App.git/dist
+git clone https://github.com/yetemegn-telaye/Todo-List-App.git
 ```
 3. To access cloned directory run:
 ```bash
