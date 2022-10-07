@@ -21,9 +21,9 @@ const displayTasks = (tasks) => {
   tasks.forEach((task) => {
     ul.innerHTML
       += `
-      <li class="task-item">
+      <li class="task-item" id=${task.index}>
           <div class="task-value" id=${task.index}>
-              <input type="checkbox" id=${task.index} name=${task.index} value=${task.description} class="task-checkbox">
+              <input type="checkbox" id=${task.index} name=${task.index} class="task-checkbox">
               <label for=${task.index} class="val-desc"> ${task.description}</label>
           </div>
          <button class="options-btn">

@@ -55,6 +55,10 @@ body {
   margin-right: 5px;
 }
 
+.task-checkbox:hover {
+  cursor: pointer;
+}
+
 .clear-btn {
   padding: 20px;
   border: none;
@@ -62,6 +66,12 @@ body {
   background-color: rgb(233, 233, 233);
   font-size: large;
   color: rgb(125, 125, 125);
+}
+
+.clear-btn:hover {
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .options-btn {
