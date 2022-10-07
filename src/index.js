@@ -2,6 +2,7 @@ import './style.css';
 import {
   addTask, displayTasks, optionsButton, removeButtonClicked,
 } from './modules/Crud.js';
+import { checkBoxClicked, clearCompletedClicked } from './modules/taskStatusUpdate.js';
 
 let taskLists = [];
 const taskInput = document.querySelector('.add-task-input');
@@ -23,6 +24,8 @@ const main = () => {
   });
   displayTasks(taskLists);
   optionsButton(taskLists);
+  checkBoxClicked(taskLists);
+  clearCompletedClicked(taskLists);
   removeButtonClicked(taskLists);
 };
 
