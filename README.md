@@ -11,6 +11,9 @@
 
 To get the content of this project locally you need to run the following commands in your terminal.
 
+## Live Demo
+
+
 ### Prerequisites
 - IDE(code editor) like: **Vscode**, **Sublime**, etc. 
 - [Git](https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/)
@@ -18,7 +21,7 @@ To get the content of this project locally you need to run the following command
 ### Setup
 1. Download the **Zip** file or clone the repo with:
 ```bash
-git clone https://github.com/yetemegn-telaye/Todo-List-App.git
+git clone https://github.com/yetemegn-telaye/Todo-List-App.git/dist
 ```
 3. To access cloned directory run:
 ```bash
