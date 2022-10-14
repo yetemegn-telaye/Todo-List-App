@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1665781769124" clover="3.2.0">
-  <project timestamp="1665781769124" name="All files">
-    <metrics statements="62" coveredstatements="15" conditionals="2" coveredconditionals="0" methods="15" coveredmethods="2" elements="79" coveredelements="17" complexity="0" loc="62" ncloc="62" packages="1" files="1" classes="1"/>
-    <file name="Crud.js" path="C:\Users\Tati\Documents\Microverse\Module 2\Week 2\Todo-List-App\src\modules\Crud.js">
-      <metrics statements="62" coveredstatements="15" conditionals="2" coveredconditionals="0" methods="15" coveredmethods="2"/>
+<coverage generated="1665783866003" clover="3.2.0">
+  <project timestamp="1665783866003" name="All files">
+    <metrics statements="62" coveredstatements="22" conditionals="2" coveredconditionals="0" methods="15" coveredmethods="4" elements="79" coveredelements="26" complexity="0" loc="62" ncloc="62" packages="1" files="1" classes="1"/>
+    <file name="Crud.js" path="C:\Users\BRIAN\Desktop\Lemma\Todo-List-App\src\modules\Crud.js">
+      <metrics statements="62" coveredstatements="22" conditionals="2" coveredconditionals="0" methods="15" coveredmethods="4"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>
       <line num="5" count="1" type="stmt"/>
@@ -48,14 +48,14 @@
       <line num="71" count="0" type="stmt"/>
       <line num="72" count="0" type="stmt"/>
       <line num="77" count="1" type="stmt"/>
-      <line num="79" count="0" type="stmt"/>
-      <line num="80" count="0" type="stmt"/>
-      <line num="81" count="0" type="stmt"/>
-      <line num="82" count="0" type="stmt"/>
-      <line num="83" count="0" type="stmt"/>
+      <line num="79" count="1" type="stmt"/>
+      <line num="80" count="1" type="stmt"/>
+      <line num="81" count="1" type="stmt"/>
+      <line num="82" count="1" type="stmt"/>
+      <line num="83" count="1" type="stmt"/>
       <line num="84" count="0" type="stmt"/>
-      <line num="86" count="0" type="stmt"/>
-      <line num="87" count="0" type="stmt"/>
+      <line num="86" count="1" type="stmt"/>
+      <line num="87" count="1" type="stmt"/>
       <line num="90" count="1" type="stmt"/>
       <line num="91" count="0" type="stmt"/>
       <line num="92" count="0" type="stmt"/>
