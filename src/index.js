@@ -4,6 +4,7 @@ import {
 } from './modules/Crud.js';
 import { checkBoxClicked, clearCompletedClicked } from './modules/taskStatusUpdate.js';
 
+
 let taskLists = [];
 const taskInput = document.querySelector('.add-task-input');
 
