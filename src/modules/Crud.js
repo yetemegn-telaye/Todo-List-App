@@ -10,11 +10,9 @@ class Task {
 
 const addTask = (inputVal, tasksArr) => {
   const taskObj = new Task(inputVal, false, tasksArr.length);
-  const localData = JSON.parse(localStorage.getItem('tasks'));
   tasksArr.push(taskObj);
-  localData.push(taskObj);
-  localStorage.setItem('tasks', JSON.stringify(localData));
-  window.location.reload();
+  localStorage.setItem('tasks', JSON.stringify(tasksArr));
+  // window.location.reload();
 };
 
 const displayTasks = (tasks) => {
@@ -102,6 +100,6 @@ const removeButtonClicked = (taskArr) => {
   });
 };
 
-export {
-  addTask, displayTasks, optionsButton, removeButtonClicked,
+module.exports = {
+  addTask, displayTasks, optionsButton, removeButtonClicked, removeTodo,
 };
