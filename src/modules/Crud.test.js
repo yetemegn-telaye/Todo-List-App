@@ -7,14 +7,13 @@ describe('Task',()=>{
     const ul = document.createElement('ul');
     ul.innerHTML+=`
       <li class="task-item" id=${arrTest[0].index}>
-
       </li>
         `;
         arrTest.push(localStorage.getItem('tasks'));
-    expect(localStorage.getItem('tasks')).not.toBeNull();
+    expect(localStorage.getItem('tasks')).not.toBe([]);
     expect(ul).not.toBeNull();
   });
-
+ 
 
 })
 

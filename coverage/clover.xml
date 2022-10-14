@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1665775934015" clover="3.2.0">
-  <project timestamp="1665775934015" name="All files">
+<coverage generated="1665781769124" clover="3.2.0">
+  <project timestamp="1665781769124" name="All files">
     <metrics statements="62" coveredstatements="15" conditionals="2" coveredconditionals="0" methods="15" coveredmethods="2" elements="79" coveredelements="17" complexity="0" loc="62" ncloc="62" packages="1" files="1" classes="1"/>
     <file name="Crud.js" path="C:\Users\Tati\Documents\Microverse\Module 2\Week 2\Todo-List-App\src\modules\Crud.js">
       <metrics statements="62" coveredstatements="15" conditionals="2" coveredconditionals="0" methods="15" coveredmethods="2"/>
