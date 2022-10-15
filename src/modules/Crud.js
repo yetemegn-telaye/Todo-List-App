@@ -36,10 +36,6 @@ const displayTasks = (tasks) => {
   todoContainer.appendChild(ul);
 };
 
-
-
-
-
 const removeTodo = (todoId, listContainer, taskArr) => {
   listContainer.remove();
   let localData = JSON.parse(localStorage.getItem('tasks'));

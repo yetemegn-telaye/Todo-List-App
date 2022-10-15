@@ -1,14 +1,10 @@
-
-const editTodo = (editInput,todoDiv, taskArr)=>{
-  
+const editTodo = (editInput, todoDiv, taskArr) => {
   const localData = JSON.parse(localStorage.getItem('tasks'));
 
-      localData[todoDiv.id].description = editInput.value;
-      taskArr = localData;
-      localStorage.setItem('tasks', JSON.stringify(taskArr));
-      
-}
-
+  localData[todoDiv.id].description = editInput.value;
+  taskArr = localData;
+  localStorage.setItem('tasks', JSON.stringify(taskArr));
+};
 
 const editTodoInput = (optionBtn, taskArr) => {
   const todoDiv = optionBtn.previousElementSibling;
@@ -22,7 +18,7 @@ const editTodoInput = (optionBtn, taskArr) => {
   editInput.focus();
   editInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
-      editTodo(editInput,todoDiv, taskArr);
+      editTodo(editInput, todoDiv, taskArr);
       labelDesc.textContent = editInput.value;
       todoDiv.replaceChild(labelDesc, editInput);
       listContainer.classList.remove('task-item-edit');
@@ -45,10 +41,10 @@ const optionsButton = (taskArr) => {
   });
 };
 
-const updateCompleted = (taskArr,checkBoxId)=>{
-      taskArr[checkBoxId].completed = !taskArr[checkBoxId].completed;
-      localStorage.setItem('tasks', JSON.stringify(taskArr));
-}
+const updateCompleted = (taskArr, checkBoxId) => {
+  taskArr[checkBoxId].completed = !taskArr[checkBoxId].completed;
+  localStorage.setItem('tasks', JSON.stringify(taskArr));
+};
 
 const checkBoxClicked = (taskArr) => {
   const checkBoxInputs = document.querySelectorAll('.task-checkbox');
@@ -59,20 +55,20 @@ const checkBoxClicked = (taskArr) => {
       e.preventDefault();
       if (checkBox.checked === true) {
         labelInput.style.textDecoration = 'line-through';
-        updateCompleted(taskArr,checkBox.id);
+        updateCompleted(taskArr, checkBox.id);
       } else {
         labelInput.style.textDecoration = 'none';
-       updateCompleted(taskArr,checkBox.id);
+        updateCompleted(taskArr, checkBox.id);
       }
     });
   });
 };
 
-const clearCompleted = (taskArr)=>{
+const clearCompleted = (taskArr) => {
   const uncompleteTask = taskArr.filter((task) => task.completed !== true);
   taskArr = uncompleteTask;
   localStorage.setItem('tasks', JSON.stringify(taskArr));
-}
+};
 
 const clearCompletedClicked = (taskArr) => {
   const clearBtn = document.querySelector('.clear-btn');
@@ -82,4 +78,6 @@ const clearCompletedClicked = (taskArr) => {
   });
 };
 
-module.exports= { checkBoxClicked, clearCompletedClicked,optionsButton,editTodo,clearCompleted, updateCompleted };
+module.exports = {
+  checkBoxClicked, clearCompletedClicked, optionsButton, editTodo, clearCompleted, updateCompleted,
+};
