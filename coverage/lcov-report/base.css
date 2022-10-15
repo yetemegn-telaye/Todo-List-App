@@ -64,6 +64,7 @@ a:hover { text-decoration:underline; }
   border-radius: 3px;
   vertical-align: middle;
 }
+
 div.path a:link, div.path a:visited { color: #333; }
 table.coverage {
   border-collapse: collapse;

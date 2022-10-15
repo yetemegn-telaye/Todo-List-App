@@ -36,43 +36,9 @@ const displayTasks = (tasks) => {
   todoContainer.appendChild(ul);
 };
 
-const editTodo = (optionBtn, taskArr) => {
-  const todoDiv = optionBtn.previousElementSibling;
-  const labelDesc = todoDiv.lastElementChild;
-  const listContainer = todoDiv.parentElement;
-  const editInput = document.createElement('input');
-  editInput.type = 'text';
-  editInput.className = 'edit-input';
-  editInput.value = labelDesc.textContent;
-  todoDiv.replaceChild(editInput, labelDesc);
-  editInput.focus();
-  editInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-      const localData = JSON.parse(localStorage.getItem('tasks'));
-      localData[todoDiv.id].description = editInput.value;
-      taskArr = localData;
-      localStorage.setItem('tasks', JSON.stringify(taskArr));
-      labelDesc.textContent = editInput.value;
-      todoDiv.replaceChild(labelDesc, editInput);
-      listContainer.classList.remove('task-item-edit');
-      optionBtn.classList.toggle('btn-toggle');
-      optionBtn.nextElementSibling.classList.toggle('btn-toggle');
-    }
-  });
-};
 
-const optionsButton = (taskArr) => {
-  const optionsBtn = document.querySelectorAll('.options-btn');
-  optionsBtn.forEach((option) => {
-    option.addEventListener('click', (e) => {
-      e.preventDefault();
-      option.parentElement.classList.toggle('task-item-edit');
-      option.classList.toggle('btn-toggle');
-      option.nextElementSibling.classList.toggle('btn-toggle');
-      editTodo(option, taskArr);
-    });
-  });
-};
+
+
 
 const removeTodo = (todoId, listContainer, taskArr) => {
   listContainer.remove();
@@ -100,5 +66,5 @@ const removeButtonClicked = (taskArr) => {
 };
 
 module.exports = {
-  addTask, displayTasks, optionsButton, removeButtonClicked, removeTodo,
+  addTask, displayTasks, removeButtonClicked, removeTodo,
 };

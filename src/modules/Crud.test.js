@@ -14,7 +14,9 @@ describe('Task', () => {
     expect(localStorage.getItem('tasks')).not.toBe([]);
     expect(ul).not.toBeNull();
   });
-  test('remove task from the local storage and li from the DOM', () => {
+ 
+});
+ test('remove task from the local storage and li from the DOM', () => {
     const todoId = 0;
     const listContainer = document.createElement('li');
     listContainer.className = 'task-item';
@@ -23,4 +25,3 @@ describe('Task', () => {
     expect(localStorage.getItem('tasks')).toEqual('[]');
     expect(document.contains(listContainer)).toBe(false);
   });
-});
