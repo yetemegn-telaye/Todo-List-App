@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1665837772590" clover="3.2.0">
-  <project timestamp="1665837772591" name="All files">
-    <metrics statements="88" coveredstatements="32" conditionals="4" coveredconditionals="0" methods="24" coveredmethods="5" elements="116" coveredelements="37" complexity="0" loc="88" ncloc="88" packages="1" files="2" classes="2"/>
-    <file name="Crud.js" path="C:\Users\Tati\Documents\Microverse\Module 2\Week 2\Todo-List-App\src\modules\Crud.js">
+<coverage generated="1665838828212" clover="3.2.0">
+  <project timestamp="1665838828212" name="All files">
+    <metrics statements="88" coveredstatements="37" conditionals="4" coveredconditionals="0" methods="24" coveredmethods="8" elements="116" coveredelements="45" complexity="0" loc="88" ncloc="88" packages="1" files="2" classes="2"/>
+    <file name="Crud.js" path="C:\Users\BRIAN\Desktop\Lemma\Todo-List-App\src\modules\Crud.js">
       <metrics statements="32" coveredstatements="20" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="4"/>
       <line num="1" count="2" type="stmt"/>
       <line num="2" count="2" type="stmt"/>
@@ -37,8 +37,8 @@
       <line num="63" count="0" type="stmt"/>
       <line num="68" count="2" type="stmt"/>
     </file>
-    <file name="taskStatusUpdate.js" path="C:\Users\Tati\Documents\Microverse\Module 2\Week 2\Todo-List-App\src\modules\taskStatusUpdate.js">
-      <metrics statements="56" coveredstatements="12" conditionals="4" coveredconditionals="0" methods="14" coveredmethods="1"/>
+    <file name="taskStatusUpdate.js" path="C:\Users\BRIAN\Desktop\Lemma\Todo-List-App\src\modules\taskStatusUpdate.js">
+      <metrics statements="56" coveredstatements="17" conditionals="4" coveredconditionals="0" methods="14" coveredmethods="4"/>
       <line num="2" count="1" type="stmt"/>
       <line num="4" count="1" type="stmt"/>
       <line num="6" count="1" type="stmt"/>
@@ -72,8 +72,8 @@
       <line num="42" count="0" type="stmt"/>
       <line num="43" count="0" type="stmt"/>
       <line num="48" count="1" type="stmt"/>
-      <line num="49" count="0" type="stmt"/>
-      <line num="50" count="0" type="stmt"/>
+      <line num="49" count="1" type="stmt"/>
+      <line num="50" count="1" type="stmt"/>
       <line num="53" count="1" type="stmt"/>
       <line num="54" count="0" type="stmt"/>
       <line num="55" count="0" type="stmt"/>
@@ -86,9 +86,9 @@
       <line num="64" count="0" type="stmt"/>
       <line num="65" count="0" type="stmt"/>
       <line num="71" count="1" type="stmt"/>
-      <line num="72" count="0" type="stmt"/>
-      <line num="73" count="0" type="stmt"/>
-      <line num="74" count="0" type="stmt"/>
+      <line num="72" count="1" type="stmt"/>
+      <line num="73" count="1" type="stmt"/>
+      <line num="74" count="1" type="stmt"/>
       <line num="77" count="1" type="stmt"/>
       <line num="78" count="0" type="stmt"/>
       <line num="79" count="0" type="stmt"/>

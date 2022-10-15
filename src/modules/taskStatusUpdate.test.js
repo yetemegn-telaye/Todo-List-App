@@ -17,6 +17,16 @@ describe('task status updates',()=>{
         const lc= JSON.parse(localStorage.getItem('tasks'));
         expect(lc[todoDiv.id].description).toBe(editInput.value);
     });
+    test('Updating item completed status',()=>{
+        let completedStatus = JSON.parse(localStorage.getItem('tasks'))[0].completed;
+        updateCompleted(taskArr,0);
+        expect(JSON.parse(localStorage.getItem('tasks'))[0].completed).toBe(!completedStatus);
+    });
+
+    test('clear completed tasks',()=>{
+        clearCompleted(taskArr);
+        expect(localStorage.getItem('tasks')).toBe("[]");
+    })
 
   
     
