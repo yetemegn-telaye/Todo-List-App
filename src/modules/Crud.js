@@ -100,5 +100,5 @@ const removeButtonClicked = (taskArr) => {
 };
 
 module.exports = {
-  addTask, displayTasks, removeTodo, optionsButton, removeButtonClicked,
+  addTask, displayTasks, optionsButton, removeButtonClicked, removeTodo,
 };

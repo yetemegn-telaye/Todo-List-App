@@ -167,7 +167,8 @@
 <a name='L102'></a><a href='#L102'>102</a>
 <a name='L103'></a><a href='#L103'>103</a>
 <a name='L104'></a><a href='#L104'>104</a>
-<a name='L105'></a><a href='#L105'>105</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -202,6 +203,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -244,7 +246,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -271,8 +272,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const ul = document.createElement("ul");
-const todoContainer = document.querySelector(".todo-container");
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const ul = document.createElement('ul');
+const todoContainer = document.querySelector('.todo-container');
 class Task {
   constructor(description, completed, index) {
     this.description = description;
@@ -284,13 +286,14 @@ class Task {
 const addTask = (inputVal, tasksArr) =&gt; {
   const taskObj = new Task(inputVal, false, tasksArr.length);
   tasksArr.push(taskObj);
-  localStorage.setItem("tasks", JSON.stringify(tasksArr));
- // window.location.reload();
+  localStorage.setItem('tasks', JSON.stringify(tasksArr));
+  //window.location.reload();
 };
 &nbsp;
 const displayTasks = <span class="fstat-no" title="function not covered" >(t</span>asks) =&gt; {
 <span class="cstat-no" title="statement not covered" >  tasks.forEach(<span class="fstat-no" title="function not covered" >(t</span>ask) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    ul.innerHTML += `</span>
+<span class="cstat-no" title="statement not covered" >    ul.innerHTML</span>
+      += `
       &lt;li class="task-item" id=${task.index}&gt;
           &lt;div class="task-value" id=${task.index}&gt;
               &lt;input type="checkbox" id=${task.index} name=${task.index} class="task-checkbox"&gt;
@@ -313,68 +316,68 @@ const editTodo = <span class="fstat-no" title="function not covered" >(o</span>p
   const todoDiv = <span class="cstat-no" title="statement not covered" >optionBtn.previousElementSibling;</span>
   const labelDesc = <span class="cstat-no" title="statement not covered" >todoDiv.lastElementChild;</span>
   const listContainer = <span class="cstat-no" title="statement not covered" >todoDiv.parentElement;</span>
-  const editInput = <span class="cstat-no" title="statement not covered" >document.createElement("input");</span>
-<span class="cstat-no" title="statement not covered" >  editInput.type = "text";</span>
-<span class="cstat-no" title="statement not covered" >  editInput.className = "edit-input";</span>
+  const editInput = <span class="cstat-no" title="statement not covered" >document.createElement('input');</span>
+<span class="cstat-no" title="statement not covered" >  editInput.type = 'text';</span>
+<span class="cstat-no" title="statement not covered" >  editInput.className = 'edit-input';</span>
 <span class="cstat-no" title="statement not covered" >  editInput.value = labelDesc.textContent;</span>
 <span class="cstat-no" title="statement not covered" >  todoDiv.replaceChild(editInput, labelDesc);</span>
 <span class="cstat-no" title="statement not covered" >  editInput.focus();</span>
-<span class="cstat-no" title="statement not covered" >  editInput.addEventListener("keypress", <span class="fstat-no" title="function not covered" >(e</span>) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (e.key === "Enter") {</span>
-      const localData = <span class="cstat-no" title="statement not covered" >JSON.parse(localStorage.getItem("tasks"));</span>
+<span class="cstat-no" title="statement not covered" >  editInput.addEventListener('keypress', <span class="fstat-no" title="function not covered" >(e</span>) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    if (e.key === 'Enter') {</span>
+      const localData = <span class="cstat-no" title="statement not covered" >JSON.parse(localStorage.getItem('tasks'));</span>
 <span class="cstat-no" title="statement not covered" >      localData[todoDiv.id].description = editInput.value;</span>
 <span class="cstat-no" title="statement not covered" >      taskArr = localData;</span>
-<span class="cstat-no" title="statement not covered" >      localStorage.setItem("tasks", JSON.stringify(taskArr));</span>
+<span class="cstat-no" title="statement not covered" >      localStorage.setItem('tasks', JSON.stringify(taskArr));</span>
 <span class="cstat-no" title="statement not covered" >      labelDesc.textContent = editInput.value;</span>
 <span class="cstat-no" title="statement not covered" >      todoDiv.replaceChild(labelDesc, editInput);</span>
-<span class="cstat-no" title="statement not covered" >      listContainer.classList.remove("task-item-edit");</span>
-<span class="cstat-no" title="statement not covered" >      optionBtn.classList.toggle("btn-toggle");</span>
-<span class="cstat-no" title="statement not covered" >      optionBtn.nextElementSibling.classList.toggle("btn-toggle");</span>
+<span class="cstat-no" title="statement not covered" >      listContainer.classList.remove('task-item-edit');</span>
+<span class="cstat-no" title="statement not covered" >      optionBtn.classList.toggle('btn-toggle');</span>
+<span class="cstat-no" title="statement not covered" >      optionBtn.nextElementSibling.classList.toggle('btn-toggle');</span>
     }
   });
 };
 &nbsp;
 const optionsButton = <span class="fstat-no" title="function not covered" >(t</span>askArr) =&gt; {
-  const optionsBtn = <span class="cstat-no" title="statement not covered" >document.querySelectorAll(".options-btn");</span>
+  const optionsBtn = <span class="cstat-no" title="statement not covered" >document.querySelectorAll('.options-btn');</span>
 <span class="cstat-no" title="statement not covered" >  optionsBtn.forEach(<span class="fstat-no" title="function not covered" >(o</span>ption) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    option.addEventListener("click", <span class="fstat-no" title="function not covered" >(e</span>) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    option.addEventListener('click', <span class="fstat-no" title="function not covered" >(e</span>) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      e.preventDefault();</span>
-<span class="cstat-no" title="statement not covered" >      option.parentElement.classList.toggle("task-item-edit");</span>
-<span class="cstat-no" title="statement not covered" >      option.classList.toggle("btn-toggle");</span>
-<span class="cstat-no" title="statement not covered" >      option.nextElementSibling.classList.toggle("btn-toggle");</span>
+<span class="cstat-no" title="statement not covered" >      option.parentElement.classList.toggle('task-item-edit');</span>
+<span class="cstat-no" title="statement not covered" >      option.classList.toggle('btn-toggle');</span>
+<span class="cstat-no" title="statement not covered" >      option.nextElementSibling.classList.toggle('btn-toggle');</span>
 <span class="cstat-no" title="statement not covered" >      editTodo(option, taskArr);</span>
     });
   });
 };
 &nbsp;
 const removeTodo = (todoId, listContainer, taskArr) =&gt; {
-  
   listContainer.remove();
-  let localData = JSON.parse(localStorage.getItem("tasks"));
+  let localData = JSON.parse(localStorage.getItem('tasks'));
   const todoIdString = Number(todoId);
   localData = localData.filter((data) =&gt; data.index !== todoIdString);
   localData.forEach(<span class="fstat-no" title="function not covered" >(d</span>ata, i) =&gt; {
 <span class="cstat-no" title="statement not covered" >    data.index = i;</span>
   });
   taskArr = localData;
-  localStorage.setItem("tasks", JSON.stringify(taskArr));
+  localStorage.setItem('tasks', JSON.stringify(taskArr));
 };
 &nbsp;
 const removeButtonClicked = <span class="fstat-no" title="function not covered" >(t</span>askArr) =&gt; {
-  const removeBtn = <span class="cstat-no" title="statement not covered" >document.querySelectorAll(".delete-btn");</span>
+  const removeBtn = <span class="cstat-no" title="statement not covered" >document.querySelectorAll('.delete-btn');</span>
 <span class="cstat-no" title="statement not covered" >  removeBtn.forEach(<span class="fstat-no" title="function not covered" >(r</span>emove) =&gt; {</span>
     const listContainer = <span class="cstat-no" title="statement not covered" >remove.parentElement;</span>
     const todoContainer = <span class="cstat-no" title="statement not covered" >listContainer.firstElementChild;</span>
-<span class="cstat-no" title="statement not covered" >    remove.addEventListener("click", <span class="fstat-no" title="function not covered" >(e</span>) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    remove.addEventListener('click', <span class="fstat-no" title="function not covered" >(e</span>) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >      e.preventDefault();</span>
-<span class="cstat-no" title="statement not covered" >      remove.classList.toggle("btn-toggle");</span>
+<span class="cstat-no" title="statement not covered" >      remove.classList.toggle('btn-toggle');</span>
 <span class="cstat-no" title="statement not covered" >      removeTodo(todoContainer.id, listContainer, taskArr);</span>
     });
   });
 };
 &nbsp;
-module.exports= { addTask, displayTasks,removeTodo, optionsButton, removeButtonClicked };
-&nbsp;
+module.exports= {
+addTask, displayTasks, optionsButton, removeButtonClicked, removeTodo
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -382,7 +385,7 @@ module.exports= { addTask, displayTasks,removeTodo, optionsButton, removeButtonC
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2022-10-14T21:44:25.830Z
+                at 2022-10-14T22:31:48.351Z
             </div>
         <script src="prettify.js"></script>
         <script>
